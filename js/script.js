@@ -10,27 +10,27 @@ $(document).ready(function() {
         
     $("button").click(function() {
         var name = $("#name").val();
-        var techPlacement = "TBD";
+        var placement = "TBD";
         var imgSrc = "https://media.giphy.com/media/22zgHX8aop488/giphy.gif";
         var q1Result = $("#question1").val();
         var q2Result = $("#question2").val();
         var q3Result = $("#question3").val();
         var totalScore=q1Result+q2Result+q3Result;
         
-        function num1(num) {
+        function num1() {
     if("#question1"=="powers"){
             q1Result=1 
-             }else if("question1"=="intelligence"){
+             }else if("#question1"=="intelligence"){
             q1Result=2
-             }else if("question1"=="law"){
+             }else if("#question1"=="law"){
              q1Result=3
-             }else if("question1"=="skill"){
+             }else if("#question1"=="skill"){
              q1Result=4
             }else{     
         var q1Result=0
     };
         }
-        function num2(num){
+        function num2(){
             if("#question2"=="supernatural abilities"){
                 q2Result=1
             }else if("#question2"=="mind"||"#question2"=="heart"||"#question2"== "mind and/or heart"){
@@ -44,7 +44,7 @@ $(document).ready(function() {
             };
         }
         
-        function num3(num){
+        function num3(){
             if("#question3"=="difficulty managing a double life"){
                 q3Result=1
             }else if("#question3"=="self-doubt"){
@@ -59,17 +59,19 @@ $(document).ready(function() {
         }
 
         function display(name){
-    $(".result").text("congrats " + name )
+    $(".result").text("congrats " + name + "! You would be a "+ person() )
 }
- var choice
+
 function person(){
-    if(totalScore==4){
-        choice="metahuman"
-    }else if(totalScore==8){
-        choice="vigilante"
+    if(totalScore==3){
+        placement="metahuman"
+    }else if(totalScore==6){
+        placement="vigilante"
+    }else if(totalScore==19){
+        placement="public authority"
     }else if(totalScore==12){
-        choice="public authority"
+        placement="desk support"
     }else{
-        choice="desk support"
+        placement="civilian"
     };
 }
