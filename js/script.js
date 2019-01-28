@@ -3,10 +3,9 @@
 $(document).ready(function() {
    
    
-    function score(ans1,ans2,ans3) {
-       $("#result").html("you got")
-       
-    }
+    //function score(ans1,ans2,ans3) {
+      // $("#result").html("you got")
+    //}
         
     $("button").click(function() {
         var name = $("#name").val();
@@ -18,7 +17,7 @@ $(document).ready(function() {
         var totalScore=q1Result+q2Result+q3Result;
         
         function num1() {
-    if("#question1"=="powers"){
+        if("#question1"=="powers"){
             q1Result=1 
              }else if("#question1"=="intelligence"){
             q1Result=2
@@ -30,7 +29,7 @@ $(document).ready(function() {
         var q1Result=0
     };
         }
-        function num2(){
+        function num2() {
             if("#question2"=="supernatural abilities"){
                 q2Result=1
             }else if("#question2"=="mind"||"#question2"=="heart"||"#question2"== "mind and/or heart"){
@@ -44,7 +43,7 @@ $(document).ready(function() {
             };
         }
         
-        function num3(){
+        function num3() {
             if("#question3"=="difficulty managing a double life"){
                 q3Result=1
             }else if("#question3"=="self-doubt"){
@@ -58,20 +57,21 @@ $(document).ready(function() {
             };
         }
 
-        function display(name){
-    $(".result").text("congrats " + name + "! You would be a "+ person() )
-}
+        function display(name) {
+    $(".result").text("congrats " + name + "! You would be a "+ person)
 
-function person(){
+    function person(){
     if(totalScore==3){
-        placement="metahuman"
-    }else if(totalScore==6){
-        placement="vigilante"
-    }else if(totalScore==19){
-        placement="public authority"
-    }else if(totalScore==12){
-        placement="desk support"
-    }else{
-        placement="civilian"
-    };
+            placement="metahuman"
+        }else if(totalScore==6){
+            placement="vigilante"
+        }else if(totalScore==19){
+            placement="public authority"
+        }else if(totalScore==12){
+            placement="desk support"
+        }else{
+            placement="civilian"
+        };
+    }
+    $(".result").show(display);
 }
