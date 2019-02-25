@@ -2,10 +2,10 @@
 
 $(document).ready(function() {
    
-   
-    //function score(ans1,ans2,ans3) {
-      // $("#result").html("you got")
-    //}
+   //ans1, ans2, ans3
+   // function score(person) {
+   //    $("#result").html("you got" + person)
+  //  }
         
     $("button").click(function() {
         var name = $("#name").val();
@@ -72,6 +72,7 @@ $(document).ready(function() {
         }else{
             placement="civilian"
         };
+       
     }
-    $(".result").show(display);
+     //$(".result").show(display);
 }
